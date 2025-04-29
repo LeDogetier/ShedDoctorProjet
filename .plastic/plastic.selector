@@ -1,0 +1,3 @@
+repository "ShedDoctor@LeDogetier@cloud"
+  path "/"
+    smartbranch "/main"

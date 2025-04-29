@@ -1,0 +1,25 @@
+* text=auto
+
+*.mat binary
+*.fbx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.ttf binary
+*.otf binary
+*.unity binary
+*.prefab binary
+*.anim binary
+*.controller binary
+*.asset binary
+*.dll binary
+*.exe binary
+*.mp4 binary
+*.mov binary
+*.avi binary
+
+*.sln text eol=crlf
+*.csproj text eol=crlf
