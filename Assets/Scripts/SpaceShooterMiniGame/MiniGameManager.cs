@@ -71,7 +71,7 @@ public class MiniGameManager : MonoBehaviour
         gameEnded = true;
 
         int finalScore = asteroidsDestroyed;
-        scoreManager.AddScore(finalScore, 0);
+        //scoreManager.AddScore(finalScore, 0);
         Debug.Log($"Score final : {finalScore}");
 
         GameScoreManager.SaveScore(finalScore); 

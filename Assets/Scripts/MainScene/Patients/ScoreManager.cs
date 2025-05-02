@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     List<int> result = new List<int>() { 0, 0, 0 };
     public TextMeshProUGUI resultat;
 
-    private void Start()
+    /*private void Start()
     {
         TextMeshProUGUI found = null;
 
@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
 
         resultat = found;
         ShowScore();
-    }
+    }*/
 
 
 
@@ -69,8 +69,10 @@ public class ScoreManager : MonoBehaviour
 
     private System.Collections.IEnumerator ReassignResultatNextFrame()
     {
-        // Wait for UI to fully load in the new scene
+
         yield return null;
+
+        Debug.Log("[ScoreManager] Rebinding TMP after scene load...");
 
         resultat = null;
 
