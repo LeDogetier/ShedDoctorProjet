@@ -11,31 +11,6 @@ public class ScoreManager : MonoBehaviour
     List<int> result = new List<int>() { 0, 0, 0 };
     public TextMeshProUGUI resultat;
 
-    /*private void Start()
-    {
-        TextMeshProUGUI found = null;
-
-        foreach (var tmp in FindObjectsOfType<TextMeshProUGUI>())
-        {
-            if (tmp.CompareTag("Resultat"))
-            {
-                found = tmp;
-                break;
-            }
-        }
-
-        if (found == null)
-        {
-            found = FindObjectOfType<TextMeshProUGUI>();
-        }
-
-        resultat = found;
-        ShowScore();
-    }*/
-
-
-
-
     private void Awake()
     {
         if (instance == null)
