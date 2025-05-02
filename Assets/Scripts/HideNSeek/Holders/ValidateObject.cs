@@ -46,7 +46,7 @@ public class ValidateObject : MonoBehaviour
 
                 Debug.Log("You found : " + endingManager.ItemFound + "/" + objectHolder.ToolsToFind.Count + " objects");
                 Destroy(gameObject);
-                scoreManager.addScore(1, 3);
+                scoreManager.AddScore(1, 3);
         }
         else
         {

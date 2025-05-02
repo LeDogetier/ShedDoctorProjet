@@ -904,6 +904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 488786437}
+  - component: {fileID: 488786438}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -927,6 +928,19 @@ Transform:
   - {fileID: 1911268483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &488786438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488786436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6512ecae460537c4ba700fdbad35edda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultat: {fileID: 0}
 --- !u!1 &581985611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,7 +2098,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149335758859}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d634bfcc529050499920a7c0eb956c0, type: 3}
   m_Name: 
@@ -2092,7 +2106,7 @@ MonoBehaviour:
   LaneDistance: 2
   MoveSpeed: 10
   JumpForce: 9
-  scoreManager: {fileID: 0}
+  scoreManager: {fileID: 488786438}
   UIManager: {fileID: 5866666021728884940}
   PointDeVie: {fileID: 278642920}
 --- !u!136 &1437366263

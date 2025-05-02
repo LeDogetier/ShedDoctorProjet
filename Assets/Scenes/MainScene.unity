@@ -10341,8 +10341,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
+  menuUI: {fileID: 0}
+  player: {fileID: 0}
+  spawnPoint: {fileID: 0}
   isGameRunning: 0
-  dropdownManager: {fileID: 0}
 --- !u!1 &1844316310
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
     }
     public void ShowGameLoseUI()
     {
-        if (GameWinUI != null)
+        if (GameLoseUI != null)
         {
             GameLoseUI.SetActive(true);
             Time.timeScale = 0f;

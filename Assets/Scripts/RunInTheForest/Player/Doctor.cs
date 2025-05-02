@@ -7,7 +7,7 @@ public class Doctor : Player
     public float MoveSpeed = 10.0f;
     public float JumpForce = 15.0f;
     private int CurrentLane = 1;
-    public ScoreManager scoreManager;
+    [SerializeField] private ScoreManager scoreManager;
 
     private bool isCrouching = false;
     private bool isGrounded;
@@ -120,7 +120,8 @@ public class Doctor : Player
         }
         if (other.CompareTag("Win"))
         {
-            scoreManager.addScore(hp, 1);
+            scoreManager.AddScore(hp, 1);
+            Debug.Log("work");
             UIManager.ShowGameWinUI();
             UIManager.ShowGameOverUI();
             Debug.Log("You Win!");

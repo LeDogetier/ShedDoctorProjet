@@ -1,24 +1,40 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    private static ScoreManager instance;
+
     List<int> result = new List<int>() { 0, 0, 0 };
     public TextMeshProUGUI resultat;
 
-    public void Awake()
+    private void Awake()
     {
-        showScore();
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        ShowScore();
     }
-    public void addScore(int score, int index)
+
+    public void AddScore(int score, int index)
     {
         result[index] += score;
     }
 
-    public void showScore()
+    public void ShowScore()
     {
-        resultat.text = $"Space Shooter : {result[0]} \nRun In The Forest : {result[1]} \nHide And Seek : {result[2]}";
+        if (resultat != null)
+        {
+            resultat.text = $"Space Shooter : {result[0]} \nRun In The Forest : {result[1]} \nHide And Seek : {result[2]}";
+        }
     }
 }
