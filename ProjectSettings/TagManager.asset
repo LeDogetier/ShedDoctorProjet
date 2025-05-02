@@ -15,6 +15,7 @@ TagManager:
   - Obstacle
   - Decorator
   - Win
+  - Resultat
   layers:
   - Default
   - TransparentFX

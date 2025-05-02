@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class ScoreManager : MonoBehaviour
 {
@@ -8,6 +10,31 @@ public class ScoreManager : MonoBehaviour
 
     List<int> result = new List<int>() { 0, 0, 0 };
     public TextMeshProUGUI resultat;
+
+    private void Start()
+    {
+        TextMeshProUGUI found = null;
+
+        foreach (var tmp in FindObjectsOfType<TextMeshProUGUI>())
+        {
+            if (tmp.CompareTag("Resultat"))
+            {
+                found = tmp;
+                break;
+            }
+        }
+
+        if (found == null)
+        {
+            found = FindObjectOfType<TextMeshProUGUI>();
+        }
+
+        resultat = found;
+        ShowScore();
+    }
+
+
+
 
     private void Awake()
     {
@@ -25,6 +52,47 @@ public class ScoreManager : MonoBehaviour
         ShowScore();
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StartCoroutine(ReassignResultatNextFrame());
+    }
+
+    private System.Collections.IEnumerator ReassignResultatNextFrame()
+    {
+        // Wait for UI to fully load in the new scene
+        yield return null;
+
+        resultat = null;
+
+        foreach (var tmp in FindObjectsOfType<TextMeshProUGUI>())
+        {
+            if (tmp.CompareTag("Resultat"))
+            {
+                resultat = tmp;
+                break;
+            }
+        }
+
+        if (resultat == null)
+        {
+            resultat = FindObjectOfType<TextMeshProUGUI>();
+        }
+
+        ShowScore();
+    }
+
+
+
     public void AddScore(int score, int index)
     {
         result[index] += score;
@@ -32,9 +100,23 @@ public class ScoreManager : MonoBehaviour
 
     public void ShowScore()
     {
-        if (resultat != null)
-        {
-            resultat.text = $"Space Shooter : {result[0]} \nRun In The Forest : {result[1]} \nHide And Seek : {result[2]}";
-        }
+        if (resultat == null) return;
+
+        string text = "";
+        text += $"Space Shooter : {result[0]}\n";
+        text += $"Run In The Forest : {result[1]}\n";
+        text += $"Hide And Seek : {result[2]}\n";
+
+        if (string.IsNullOrEmpty(text)) text = "Aucun score pour l'instant.";
+
+        resultat.text = text;
     }
+
+
+    public void SetResultText(TextMeshProUGUI textComponent)
+    {
+        resultat = textComponent;
+        ShowScore();
+    }
+
 }

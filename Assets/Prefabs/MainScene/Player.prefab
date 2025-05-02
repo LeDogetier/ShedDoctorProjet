@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8312961732458981020}
   - component: {fileID: 7580520539377335660}
-  - component: {fileID: 8463418376858195160}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -62,20 +61,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.88, z: 0}
---- !u!114 &8463418376858195160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271652772840945670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed54c96c14a3a1446bb00a59a96484ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterController: {fileID: 7580520539377335660}
-  animator: {fileID: 364650535724723609}
 --- !u!1 &4665290043634990581
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,11 +325,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c22d296d434cf54380cc9acfb2c7305, type: 3}
---- !u!95 &364650535724723609 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 2c22d296d434cf54380cc9acfb2c7305, type: 3}
-  m_PrefabInstance: {fileID: 6081524239339851784}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6048144558447589347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c22d296d434cf54380cc9acfb2c7305, type: 3}
